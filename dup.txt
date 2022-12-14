@@ -1,0 +1,20 @@
+virtual void addGroupMembersDisableSendMsg(int32_t oid, IGData * giderData, IGData * groupMemberIds, int32_t forbidTimes, IGString * tag, Im::Responser* callback) = 0;
+		/**
+		 * 添加可发言成员
+		giderData : CoreGroupIdentifier
+		groupMemberIds: CoreGroupMemberIdentifierList
+		callback: nil, Error
+		 */
+		virtual void addGroupMembersEnableSendMsg(int32_t oid, IGData * giderData, IGData * groupMemberIds, IGString * tag, Im::Responser* callback) = 0;
+		virtual void applyJoinGroup(int32_t oid, IGData * giderData, IGData * staffIdsData, IGData * sectorIdsData, IGString * attachMsg, IGString * tag, Im::Responser* callback) = 0;
+		/**
+		 * 通过ApplyID同意操作 包括转让群主+申请入群
+		coreGroupApplyID: 申请ID
+		
+		Callback: nil, err
+		 */
+		virtual void approveGroupApplyByID(int32_t oid, IGData * coreGroupApplyID, IGString * tag, Im::Responser* callback) = 0;
+		/**
+		 * warning 接口废弃 请使用 ApproveGroupApplyByID
+		通过ApplyID允许入群接口
+		coreGroupApplyID: 申请ID
